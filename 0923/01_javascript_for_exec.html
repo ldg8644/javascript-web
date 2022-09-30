@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_javascript_for문을 활용한 구구단 만들기</title>
+</head>
+<body>
+    <h2>01_javascript_for 문을 활용한 구구단 만들기</h2>
+    <p>사용방법 : 
+        <br>for(초기값;조건식;증감식){실행할 내용;}</p>
+
+        <h3>구구단 출력하기</h3>
+
+        <script>
+
+            /*
+
+            *****2단*****
+            2*1=2
+            2*2=4
+            */
+
+            for(let i=2;i<=9;i++){
+                document.write(`<h3>********${i}단********</h3>`);
+                for(let j=1;j<=9;j++){
+                    document.write(`<p>${i} * ${j} = ${i*j}</p>`);
+                }
+            }
+        </script>
+</body>
+</html>

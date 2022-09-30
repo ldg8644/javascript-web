@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exec02</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+  <style>
+    
+    #banner{
+    width: 578px;
+        height: 393px;
+    border: 2px solid #000;
+    position: relative;
+
+}
+#banner >img{
+    width :100%;
+  
+    
+}
+#banner *{
+    padding: 0px;margin: 0px;
+}
+.fa-angle-left{
+    display: block;
+    width: 40px;
+text-align: center;
+ background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-size: 40px;
+    position: absolute;
+    top:160px;
+    left: 5px;
+  
+}
+.fa-angle-right{
+display: block;
+ background-color: rgba(0, 0, 0, .8);
+width: 40px;
+text-align: center;
+    color: #fff;
+    font-size: 40px;
+    position: absolute;
+    right: 5px;
+    top: 160px;
+
+}
+#page{
+    
+    background-color: rgba(0, 0, 0, .7);
+    color: #fff;
+    font-size: 14px;
+    position: absolute;bottom: 0px;
+    right: 0px;
+    padding: 4px 8px;
+}
+  </style>
+</head>
+<html>
+    <article id="banner">
+        <img src="./images/movie_image1.jpg" alt="" id="photo">
+
+        <!-- 좌,우측 방향버튼 -->
+        <i class="fas fa-angle-left"></i>
+        <i class="fas fa-angle-right"></i>
+
+        <!-- 이미지 번호 -->
+        <span id="page"></span>
+    </article>
+    <script>
+         //초기값
+         let n=1;
+
+         //1씩 증가하는 함수
+         function nextImg(){
+            if(n==10){
+                n=1;
+            }else{
+                n++;
+            }
+            console.log(n);
+            document.getElementById('page').innerHTML=n+'/10'
+            document.getElementById('photo').src='./images/movie_image'+n+'.jpg';
+         }
+
+           //1씩 감소하는 함수
+        function prevImg(){
+            if(n==1){
+                n=10;
+            }else{
+                n--;
+            }
+            console.log(n);
+            document.getElementById('page').innerHTML=n+'/10';
+            document.getElementById('photo').src='./images/movie_image'+n+'.jpg';
+        }
+        
+
+         //버튼클릭시 각각 함수를 호출하여 결과를 확인한다.
+         const l_btn = document.querySelector('i.fa-angle-left')
+        const r_btn = document.querySelector('i.fa-angle-right')
+        
+        l_btn.addEventListener('click',function(e){
+            e.preventDefault(); prevImg();
+        });
+        r_btn.addEventListener('click',function(e){
+            e.preventDefault() ;nextImg();
+        });
+
+        const p_num = document.getElementById('page').innerHTML=n+'/10';
+    </script>
+</body>
+</html>

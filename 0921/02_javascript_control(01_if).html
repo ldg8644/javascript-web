@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_javascript_control(01_if)
+    </title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+    <style>
+        span{
+            color: #f00;font-weight: bold;
+        }
+        /* 좌우 방향버튼을 활용한 페이지 넘기기 서식 */
+        #page{
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        i.fas{
+            padding: 4px 8px;
+            border: 1px solid #333333;
+            cursor: pointer;
+        }
+        article{
+            width: 400px;
+            height: 530px;
+            border: 5px solid rgb(255, 255, 255);
+            box-shadow: 0px 0px 10px #333;
+            padding: 20px;
+            text-align: right;
+
+        }
+        article img{
+            padding-top: 10px;
+
+        }
+    </style>
+    
+    <script>
+        //1. if문 사용하기
+
+        if(1=='1'){//만약에 1과 '1'이 같다면 아랜 ㅐ용을 실행한다.
+            document.write('(1=="1")위수식은 <span>참</span>입니다.<br>')
+        }
+
+        //2.if else문 사용하기
+        if(1==='1'){//숫자1과 문자1이 같다면 아래내용을 실행함니다.
+            document.write('(1=="1")위수식은 <span>참</span>입니다.')
+        }else{
+            document.write('(1==="1")위수식은 <span>거짓</span>입니다.<br>')
+        }
+
+        //삼할 조건연산자
+        (1==='1')?document.write('위수식은 <span>참</span>입니다.<br>'):document.write('위 수식은 <span>거짓</span>입니다.')
+
+
+        //문.사용자가 입력한 숫자를 가지고 '홀수', '짝수'인지 판단하는 조건식 만들기
+        let n = prompt('숫자를 입력하세요');
+        if(n%2==0){
+            document.write(`<p>입력하신 숫자는${n}은 짝수 입니다.</p>`);}else
+            {document.write(`<p>입력하신 숫자는${n}은 홀수 입니다.</p>`)
+        }
+
+
+
+
+        //성적을 이용해서 수,우,미,양,가 표현하기
+        let jum = prompt('자신의 평균점수를 입력하세요 예)90,80,40');
+        if(jum>=90){
+            document.write('<p>당신의 성적은<span>수</span></p>');
+        }else if(jum>=80){
+            document.write('<p>당신의 성적은<span>우</span></p>');
+        }else if(jum>=70){
+            document.write('<p>당신의 성적은<span>미</span></p>');
+        }else if(jum>=60){
+            document.write('<p>당신의 성적은<span>양</span></p>');
+        }else if(jum>=50){
+            document.write('<p>당신의 성적은<span>가</span></p>');
+        }
+    </script>
+</head>
+<body>
+    <h2>02_javascript 제어문,if문</h2>
+
+    <p>제어문? 프로그램의 실행을 제어(control)하기 위해 사용하는 실행문으로서 조건문 (if,else, if else), 선택문(switch case), 반복문(while, do while, for)이 있다.</p>
+
+    <h3>1. 조건문 - if, else, else if</h3>
+    <ul>
+        <li>if문 - 조건식이 만족할때만 실행되는 조건문이다.</li>
+        <li>else문 - 조건식이 만족하면 true, 만족하지 않으면 false가 나오도록 하는 조건문이다.</li>
+        <li>else if문 - 조건식이 여러개일 경우 다양한 결과값을 얻기 위한 조건문이다.</li>
+    </ul>
+    <article>
+    <h3>교보문고 책이미지 콘텐츠 구현하기</h3>
+        <p>좌, 우측 방향 버튼을 클릭시 숫자 증가/감소 기능 만들기</p>
+        <p>변수값이 변경될때 이미지 파일명도 변경하여 페이지 넘기기</p>
+
+
+        <span id="page">&nbsp;</span>
+        <i class="fas fa-angle-left" onclick="minus();"></i>
+        <i class="fas fa-angle-right" onclick="plus();"></i>
+        <div>
+            <img src="./images/book1.jpg" alt="" id="book">
+        </div>
+    </article>
+    <script>
+        let n01 = 1;//초기값
+
+        document.getElementById('page').innerHTML=n01+'/10';
+
+        //함수만들기
+        function plus(){
+            if(n01==10){//만약에 마지막이미지라면
+                n01=1;//처음 이미지가 나오게 하고
+            }else{//그렇지 않으면
+                n01++;//다음 이미지가 나온다
+            }
+            console.log(n01);
+            document.getElementById('page').innerHTML=n01+'/10';
+            document.getElementById('book').src='./images/book'+n01+'.jpg'
+        }
+
+        function minus(){
+            if(n01==1){//만약에 처음이미지라면
+            n01=10;//마지막이미지가 나오게 하고
+        }else{//그렇지 않다면
+            n01--;}//다음이미지가 나오게 한다. 10,9,8,7,6,5...
+            console.log(n01);
+            document.getElementById('page').innerHTML=n01+'/10';
+            document.getElementById('book').src='./images/book'+n01+'.jpg'
+        }
+      
+    </script>
+</body>
+</html>

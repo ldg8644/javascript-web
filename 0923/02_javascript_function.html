@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_javascript_function(함수)</title>
+    <style>
+        .p01{
+            background-color: #ffff00;
+        }
+    </style>
+    <script>
+        //1.매개변수 없는 일반함수
+        function print01(){
+            document.write('<p class="p01">매개변수가 없는 일반함수 실행하기</p>')
+        }
+
+        //함수명을 호출하여 출력하기
+        print01();
+
+        //2.매개변수가 있는 함수
+        function print02(name){
+            document.write(`<p>나의 이름은 ${name}입니다.</p>`);
+        }
+        //함수명을 호출하여 출력하기
+
+        // print02('홍길동');
+
+        //사용자가 입력한 이름으로 출력하기
+        let name=prompt('이름을 입력하세요');
+        print02(name);
+
+        //사용자가 '이름', '사는지역명'을 입력받아서 '철수'가 사는 지역은 '부산'입니다. 라고 출력하기
+
+
+        let home=prompt('사는 지역명을 입력하세요');
+        //위에서 입력한 변수 값을 함수로 넘겨서 출력하게하기
+        print03(name,home); //es5
+
+        // function print03(name,home){
+        //     return document.write(`<p>${name}님이 사는 지역은 ${home}입니다.</p>`)
+        // }
+
+
+        //화살표 공식
+        //const 변수명 = ()=>{return 실행할 내용;}
+        const print04=(name,home)=>{   //es6
+            return document.write(`<p>${name}님이 사는 지역은 ${home}입니다.</p>`);
+        }
+        print
+
+       
+    </script>
+</head>
+<body>
+    
+    <h2>02_javascript_function(함수)</h2>
+
+    <p>함수란?(function)</p>
+    <p>함수는 일련의 내용을 삽입하여 사용자가 언제든 호출하여 내용을 실행할 수 있는 실행문이다.</p>
+    <p>코드의 중복제거 및 재사용이 용이하다</p>
+    <p>유지보수의 용이성이 높다.</p>
+    <p>함수의 종류는 내장함수 - prompt('사용자가 입력'), alert('경고메시지').....와 사용자 정의 함수가 있다.</p>
+    <pre>
+        1.매개변수가 없는 일반함수
+         function 함수명(){
+            실행할 내용;
+         }
+
+         2.매개변수가 있는 함수
+         function 함수명(변수1, 변수2, 변수3.....){
+            실행할 내용;
+         }
+
+         3.리턴값이 있는 함수
+         function 함수명(변수1, 변수2, 변수3.....){
+            실행할 내용;
+            return 실행결과;
+         }
+    </pre>
+
+
+    <h3>문1, 사용자가 입력한 숫자를 변수에 대입하여 1부터 n까지의 합계를 구하기</h3>
+
+    <script>
+        let n=Number(prompt('합계를 구할 숫자를 입력하여 주세요'))
+
+        const result = (n)=>{
+            let sum=0;
+            for(let i=1;i<=n;i++){
+                sum= Number(sum) +Number (i) ;
+            }
+            document.write(`입력하신 숫자의 총합은${sum}입니다.`)
+        }
+
+        result(n);
+    </script>
+</body>
+</html>

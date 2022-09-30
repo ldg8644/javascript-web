@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_javascript_date(날짜와 시간)</title>
+    <style>
+        #clock{
+            font-size: 40px;
+            color: #00f;
+            font-weight: bold;
+        }
+    </style>
+    <script src="./script/main.js" defer></script>
+    <script>
+        //날짜객체를 생성
+        let today = new Date();
+
+        //년, 월, 일, 시, 분, 초를 출력
+        document.write(today+'<br>')//표준시간, 날짜전체를 표시
+        document.write(today.getFullYear()+'<br>')//년
+        document.write(today.getMonth()+1+'<br>')//월 (0부터 시작)
+        document.write(today.getDate()+'<br>')//일
+        document.write(today.getDay()+'<br>')//요일 (0부터 시작)
+
+        let yoil =['일','월','화','수','목','금','토'];
+        document.write(`오늘의 요일은 ${yoil[today.getDay()]}요일입니다.<br>`)
+        
+
+        document.write(today.getHours()+'시<br>')//시
+        document.write(today.getMinutes()+'분<br>')//분
+        document.write(today.getSeconds()+'초<br>')//초
+
+
+       
+    </script>
+</head>
+<body>
+    <h2>03_javascript_date(날짜와 시간)</h2>
+    <p>Date객체는 현재또는 특정 날짜와 시간에 대한 정보를 제공하는 객체이다.</p>
+    <p>작성법) var변수명 = new Date();</p>
+    <h3>날짜와 시간정보를 제공하는 속성</h3>
+    <ul>
+        <li>getFullYear() : 날짜정보에서 연도에 대한 정보를 제공</li>
+        <li>getMonth() : 날짜정보에서 월(0~11) 에 대한 정보를 제공</li>
+        <li>getDate() : 날짜정보에서 일에 대한 정보를 제공</li>
+        <li>getDay() : 날짜정보에서 요일에 대한 정보를 제공</li>
+        <li>getHour() : 날짜정보에서 시간(0~23)에 대한 정보를 제공</li>
+        <li>getMinutes() : 날짜정보에서 분에 대한 정보를 제공</li>
+        <li>getSecond() : 날짜정보에서 초(0~59)에 대한 정보를 제공</li>
+        <li>getMilliseconds() : 날짜정보에서 밀리초(1/1000)에 대한 정보를 제공</li>
+    </ul>
+
+
+
+<div id="clock"></div>
+
+
+</body>
+</html>

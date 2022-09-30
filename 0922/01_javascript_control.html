@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_javascript_제어문_if문 실습예제</title>
+
+    <script>
+        //1번문제 풀기
+        //1.데이터 입력 id,pw
+        let id=prompt('아이디를 입력하세요');
+        let pw=prompt('패스워드를 입력하세요');
+
+        //2.조건식
+        if(id=='master'|| id=='abcd'|| id=='naver'){
+            if(pw=='1234'){document.write('<p>인증완료</p>');
+        
+        }else{document.write('<p>패스워드가 틀렸습니다.</p>');}
+  
+        }else{
+            document.write('<p>아이디가 틀렸습니다, 다시시도하세요</p>');
+        }
+
+
+        //상향조건 연산자 =>  조건식?실행문1:실행문2;
+
+        (id=='master'||id=='abcd'||id=='naver')&&(pw=='1234')?document.write('인증완료')
+                :document.write('인증실패')
+
+    </script>
+</head>
+<body>
+    <h2>01_javascript_제어문_if문 실습예제</h2>
+    <p>if문을 활용하여 주어진 조건에 맞는 결과 출력하기</p>
+
+    <h3>실습예제 1</h3>
+    <p>사용자가 입력한 아이디가 'master', 'abcd', 'naver'중 하나만 입력해도 인증이 되며, 패스워드는 '1234'일때 인증이 되도록 결과값이 나오도록 함, 아이디와 패스워드가 맞으면 '인증완료',아이디와 패스워드가 일치하지 않으면'인증실패 다시 시도하세요'라고 출력하기</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>exec</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+
+            <style>
+        *{margin: 0px; padding: 0px;}
+        ul,li{
+            list-style: none;
+        }
+        a{text-decoration: none;color: #333;}
+        body{
+            font-family: "맑은 고딕", Arial, sans-serif;
+            font-size: 12px;
+            color: #333;
+        }
+   
+        .banner_box{
+            width: 1200px;
+            margin: 0px auto;
+            border: 3px solid #000;
+        }
+        .banner_box img{width: 100%;
+        transition: 0.3s;}
+        .banner_box >ul{
+            display: flex;
+            
+        }
+        .banner_box >ul >li{overflow: hidden;} /*이미지를 감싸고 있는컨텐츠에 오버플로우넣기*/
+        .banner_box >ul img:hover{opacity: 0.7;cursor: pointer;
+}
+
+.main_img{position: relative;}
+
+.fa-angle-left{
+    display: block;
+    width: 50px;
+text-align: center;
+ background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    top:400px;
+    left: 5px;
+  
+}
+.fa-angle-right{
+display: block;
+ background-color: rgba(0, 0, 0, .8);
+width: 50px;
+text-align: center;
+    color: #fff;
+    font-size:50px;
+    position: absolute;
+    right: 5px;
+    top: 400px;
+
+}
+    </style>
+
+</head>
+<body>
+    <article class="banner_box">
+        <ul>
+            <li><img src="./images03/movie_image1.jpg" alt="" onclick="imgChange(1);"></li>
+            <li><img src="./images03/movie_image2.jpg" alt="" onclick="imgChange(2);"></li>
+            <li><img src="./images03/movie_image3.jpg" alt="" onclick="imgChange(3);"></li>
+            <li><img src="./images03/movie_image4.jpg" alt="" onclick="imgChange(4);"></li>
+            <li><img src="./images03/movie_image5.jpg" alt="" onclick="imgChange(5);"></li>
+            <li><img src="./images03/movie_image6.jpg" alt="" onclick="imgChange(6);"></li>
+            <li><img src="./images03/movie_image7.jpg" alt="" onclick="imgChange(7);"></li>
+            <li><img src="./images03/movie_image8.jpg" alt="" onclick="imgChange(8);"></li>
+            <li><img src="./images03/movie_image9.jpg" alt="" onclick="imgChange(9);"></li>
+            <li><img src="./images03/movie_image10.jpg" alt="" onclick="imgChange(10);"></li>
+        </ul>
+        <div class="main_img">
+            <img src="./images03/movie_image1.jpg" alt="" id="banner">
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-right"></i>
+        </div>
+    </article>
+    <script>
+        function imgChange(a){
+    
+            console.log(a);
+
+    //  document.getElementById('banner').src=`./images03/movie_${a}.jpg`
+
+        let src ='./images03/movie_image1.jpg';
+        src = src.replace('1',a);
+        document.getElementById('banner').src = src;
+        
+    
+    }
+
+
+    //초기값
+    let n=1;
+    
+    //1씩 증가하는 함수
+     function nextImg(){
+      
+        if(n==10){
+            n=1;
+        }else{
+            n++;
+        }
+        console.log(n);
+
+        document.getElementById('banner').src='./images03/movie_image'+n+'.jpg';
+     }
+    
+    //1씩 감소하는 함수
+    function prevImg(){
+       
+       
+        if(n==1){
+            n=10;
+        }else{  
+            n--;
+        }
+        console.log(n);
+    
+        document.getElementById('banner').src='./images03/movie_image'+n+'.jpg';
+    }
+    
+    //버튼클릭시 각각 함수를 호출하여 결과를 확인한다.  
+    const l_btn = document.querySelector('i.fa-angle-left')
+    const r_btn = document.querySelector('i.fa-angle-right')
+    
+    l_btn.addEventListener('click',function(e){
+        e.preventDefault(); prevImg();
+    });
+    
+    r_btn.addEventListener('click',function(e){
+        e.preventDefault() ;nextImg();
+    });
+    
+
+
+
+    
+
+
+        </script>
+</body>
+</html>

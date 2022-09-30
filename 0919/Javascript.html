@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01자바스크립트의 소개와 기본문법</title>
+    <style>
+        .logo{
+            background-color: #ffff00;line-height: 100px;
+            text-align: center;
+            
+        }
+        .logo > a{
+            color: #ff0000;text-decoration: none;
+        }
+    </style>
+     <script>
+        //1줄주석      내부 자바스크립트 내용 작성하기
+        /*
+        2줄주석
+        css와 같은 주석으로서 내용을 여러줄로 나누어 작성시 또는 코드를 한꺼번에 주석처리 할때 사용
+        vs code에서는 단축키 'ctrl + /'를 사용하면 주석처리됨.
+        */
+       document.write('<h1 class="logo"><a href="#" title="상단로고">상단로고</a></h1>');
+     </script>
+     <script src="./script/script.js"></script>
+</head>
+<body>
+    <h2>01자바스크립트의 소개와 기본문법</h2>
+    <ol>
+        <li>자바스크립트는 html문서안에서 삽입되어 작동된다.</li>
+        <li>기본적으로 css언어와 같이 head안에서 작성되며, 필요에 따라 body태그 안에서도 작성이 가능하다.</li>
+        <li>자바스크립트는 주석을 사용할 때 2가지 종류가 있으며, 한줄주석은 '//주석내용',2줄이상의 주석은 '/*주석내용*/'기호를 사용한다.</li>
+        <li>html, css태그요소는 대소문자를 구별 안하지만, 자바스크립트는 대, 소문자를 구별한다.</li>
+        <li>자바스크립트는 문자데이터를 입력시''홑따옴표 기호, ""쌍따옴표 기호를 사용하여 묶어준다.</li>
+        <li>자바스크립트는 css처럼 문서내에서 작성하는 것을 내부스크립트라고 하며, 외부문서를 별도로 저장하여 html 문서에 삽입하여 연결하는 것을 외부스크립트(파일명.js)라고한다.</li>
+        <li>자바스크립트의 선언은 css처럼 script, /script로 선언하고 종료한다.</li>
+    </ol>
+</body>
+</html>

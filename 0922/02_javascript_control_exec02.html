@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_javascript_제어문_실습예제2</title>
+    <style>
+        .color02{color: red;}
+        .color01{color:blue;}
+    </style>
+    <script>
+
+        //데이터입력하기
+        let bus = Number(prompt('교통비를 입력하세요'));
+        let food = Number(prompt('식비를 입력하세요'))
+        let drink = Number(prompt('음료비를 입력하세요'))
+
+        //수식을 작성하여 합계구하기
+        let sum = bus + food +drink;
+
+        //조건식으로 출력하기
+        if(sum<10000){
+            document.write('<p class="color01">돈관리 잘했어요</p>');
+        }else{
+            sum =10000-sum;
+            document.write('<p class="color02">'+sum+'초과</p>');
+        }
+
+        // if(bus+food+drink>10000){
+        //     document.write(bus+food+drink-10000+'원 초과')
+        // }else{
+        //     document.write('돈관리 잘했어요.')
+        // }
+    </script>
+</head>
+<body>
+    <h2>02_javascript_제어문_실습예제2_지출내역 계산하기</h2>
+
+    <p>
+        진영이의 하루 지출 내역은 교통비 000원, 식비 000원 음료비 000원 입니다. 조건문 if문을 사용항 하루 적정 지출비용인 10000원을 초과 하면 '0000초과'라고 빨강글자로 표시하고, 그렇지 않을 경우 '돈관리 잘했어요'라고 파랑색으로 출력하기
+    </p>
+
+    <dl>
+        <dt>작성순서</dt>
+        <dd>변수 3개를 작성하고 사용자가 입력할 수 있게 prompt함수를 사용한다.</dd>
+        <dd>조건식 if문을 사용하여 조건에 맞으면 '돈관리 잘했어요'</dd>
+        <dd>그렇지 않으면 '0000초과'라고 출력한다.</dd>
+    </dl>
+</body>
+</html>
